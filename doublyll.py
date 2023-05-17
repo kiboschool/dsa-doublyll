@@ -28,8 +28,16 @@ class DoublyLL:
         return s
 
     def init_prevs(self):
-        # Implement here
-        pass
+        if self.head is None:
+            return
+
+        prev = None
+        trav = self.head
+
+        while trav is not None:
+            trav.prev = prev
+            prev = trav
+            trav = trav.next
 
     def reverse_string(self):
         if self.head is None:
